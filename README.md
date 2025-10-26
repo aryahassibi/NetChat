@@ -3,7 +3,7 @@
 A lightweight **client–server messaging app** built with Python sockets and Tkinter.  
 Supports **multiple concurrent clients**, **channel subscriptions**, and **real-time messaging**. showcasing fundamentals of secure communication, authentication, and networked systems.
 
-> ![Demo Screenshot](docs/demo.png)
+![Demo Screenshot](docs/demo.png)
 
 ---
 
