@@ -23,14 +23,32 @@ Supports **multiple concurrent clients**, **channel subscriptions**, and **real-
 - Displays connection status and message logs in a Tkinter GUI.  
 - Handles disconnects and server closures safely.
 
----
+
 
 ## 📍 Tech Stack
 - **Language:** Python 3.10+  
 - **Libraries:** `socket`, `threading`, `tkinter` (all standard library)  
 - **Concepts:** Concurrency, Client-Server Architecture, Authentication, GUI Design, Logging  
 
----
+
+
+## 📍 Architecture
+```
+┌───────────┐        TCP/IP        ┌───────────┐
+│ Client    │ <------------------> │  Server   │
+│ GUI App   │                      │  Tkinter  │
+│ (Tkinter) │  sockets,            │  Threads  │
+│           │  message protocol    │  Logging  │
+└───────────┘                      └───────────┘
+```
+Each client runs on a separate thread in the server.  
+Messages follow a simple command protocol:  
+- `identify <username>`  
+- `subscribe <channel_id>`  
+- `message <channel_id> <content>`  
+- `unsubscribe <channel_id>`  
+- `disconnect`
+
 
 ## 📍 Getting Started
 
@@ -50,8 +68,6 @@ python3 client.py
 # 4. Chat
 # Subscribe to a channel and start messaging other connected clients.
 ```
-
----
 
 ## 📍 What It Demonstrates
 
